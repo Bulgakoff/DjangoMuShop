@@ -8,18 +8,19 @@
 </head>
 
 <body>
-    <h1 class="hhh">Каталог</h1>
+    <h1>Интернет магазин музыкальных инструментов/Каталог</h1>
     <div class="container">
-        <div class="logo"> <img src="/static/img/logotip/logo3.png"></div>
+        <div class="logo"> <img src="/static/img/logotip/logo3.png" alt=""></div>
         <div class="header">
+
             <ul class="meny">
-                <li> <a href="../index.html">Главная</a></li>
-                <li><a href="../cont.html">Контакты</a></li>
-<!--                <li><a href="catalog.html">Каталог</a></li>-->
+                <li><a href="{% url 'index' %}">Главная</a></li>
+                <li><a href="{% url 'products' %}">Каталог</a></li>
+                <li><a href="#">Войти</a></li>
             </ul>
         </div>
     </div>
-
+   <hr>
 
     <div class="gitar">
         <hr>
@@ -32,7 +33,8 @@
     </div>
     <div class="inv"></div>
 
-    <div class="footer">
+
+      <div class="footer">
         <footer> Все права защищены &#169; &nbsp;2020 <a class="link" href="https://aliexpress.ru" target="_blank">aliexpress</a> </footer>
     </div>
 </body>
