@@ -1,7 +1,7 @@
 {% extends 'mainapp/base.html' %}
 {% load static %}
 {% block css %}
-    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href={% static 'css/style.css' %}>
 {% endblock %}
 
 {% block content %}
@@ -29,7 +29,7 @@
             телефонам к&nbsp;менеджерам. Наши сотрудники всегда внимательны и&nbsp;вежливы, они предоставят
             профессиональную консультацию и&nbsp;помогут сориентироваться при выборе.</p>
     </div>
-    <button style="background-color: powderblue"><a href="{% url 'products' %}">Начать покупки</a></button>
+    <button style="background-color: powderblue"><a href="{% url 'mainapp:products' %}">Начать покупки</a></button>
     <hr>
 {% endblock %}
 
