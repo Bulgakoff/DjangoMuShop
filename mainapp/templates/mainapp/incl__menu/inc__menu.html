@@ -1,0 +1,18 @@
+<div class="header">
+
+        <ul class="meny">
+            <li><a href="{% url 'main' %}">Главная</a></li>
+            <li><a href="{% url 'mainapp:products' %}">Каталог</a></li>
+            {% if user.is_authenticated %}
+                <li><a href="{% url 'authapp:profile' %}">{{ user.first_name }} <i class="fas fa-user-circle"></i></a>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'mainapp:products' %}"><i class="fas fa-shopping-bag"></i></a>
+                </li>
+                </li>
+                <li><a href="{% url 'auth:logout' %}">Выйти <i class="fas fa-sign-out-alt"></i></a></li>
+            {% else %}
+                <li><a href="{% url 'authapp:login' %}">Войти<i class="fas fa-sign-in-alt"></i></a></li>
+            {% endif %}
+
+        </ul>
+</div>

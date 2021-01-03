@@ -10877,3 +10877,450 @@ body {
 .sb-sidenav-light .sb-sidenav-footer {
     background-color: #e9ecef;
 }
+
+
+/*=========================================*/
+.container {
+    /*background: url("/static/img/logotip/bg.jpg");*/
+}
+
+.prod_discr {
+    border: 2px solid #000000;
+    padding: 20px;
+    margin: 20px;
+}
+
+.inv {
+    height: 600px;
+}
+
+.discr_lt {
+    font-size: 15px;
+}
+
+.ltl {
+    font-size: 10px;
+}
+
+.clr {
+    clear: both;
+}
+
+.conta > ul > li {
+    list-style: none;
+}
+
+.header > ul > li {
+    float: left;
+    margin: 5px 10px;
+}
+
+.cat_prod {
+    display: flex;
+}
+
+.header {
+    /* width: 1310px; */
+
+    height: 80px;
+    /* position: absolute; */
+    margin-left: 100px;
+    background: url(/static/img/logotip/11.jpg);
+    /*    border: 2px solid #000;*/
+}
+body {
+    padding-top: 56px;
+}
+
+.footer {
+    background-color: lightsteelblue;
+    height: 50px;
+    text-align: right;
+    padding-top: 30px;
+    padding-right: 50px;
+    clear: both;
+    /*    overflow: hidden;*/
+}
+
+/*
+.map {
+    width: 100%;
+    height: 374px;
+}
+*/
+
+
+.insnt_diff {
+    display: flex;
+    /*justify-content: space-around;*/
+    /*margin-top: 200px;*/
+}
+
+
+.gitar {
+    /*position: relative;*/
+    /*margin-top: 200px;*/
+    /*margin-right: 15px;*/
+
+}
+
+
+.prod_cat1 {
+    /*position: absolute;*/
+    /*top: 50px;*/
+    /*left: 30px;*/
+    /*    background-color: #ccc;*/
+}
+
+.prod_cat2 {
+    /*top: 70px;*/
+    /*left: 190px;*/
+    /*position: absolute;*/
+    /*    background-color: #ccc;*/
+}
+
+.prod_cat3 {
+    /*top: 50px;*/
+    /*position: absolute;*/
+    /*left: 520px;*/
+    /*    background-color: #ccc;*/
+}
+
+.butt_buy {
+    background-color: lightskyblue;
+    /*    margin-left: 00px;*/
+    outline: 3px solid #000;
+}
+
+.butt_buy:hover {
+    color: brown;
+    background-color: yellow;
+    outline: 3px solid brown;
+}
+
+.butt_buy:active {
+    color: white;
+    background-color: darkgreen;
+    outline: 3px solid blue;
+}
+
+.text_main {
+    margin-top: auto;
+    float: left;
+}
+
+.meny li:nth-child(2) a {
+    color: #000;
+}
+
+
+/*
+.meny li:nth-child(2n) {
+    background-color: lightskyblue;
+}
+*/
+
+.meny li:first-child {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.meny li:last-child {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.meny li a:hover {
+    color: white;
+}
+
+.meny li a:active {
+    color: green;
+}
+
+.meny li:hover:before {
+    /*    content: "!!!       ";*/
+    color: red;
+}
+
+
+.logo {
+    position: absolute;
+    margin-left: 17px;
+    /*    border: 2px solid #000;*/
+    float: left;
+}
+
+.menu a {
+    display: block;
+    height: 100%;
+}
+
+
+input,
+textarea {
+    text-transform: capitalize;
+}
+
+
+.tab2 td {
+    border: 1px solid black;
+    height: auto;
+    vertical-align: top;
+    padding-top: 30px;
+}
+
+.tab2 {
+    /*    text-align: center;*/
+    border: 1px solid #000;
+    width: 400px;
+    height: 200px;
+    /*    border-spacing: 10px;*/
+}
+
+.tab {
+    text-align: center;
+    border: 1px solid #000;
+    width: 400px;
+    height: 200px;
+    border-spacing: 10px;
+    border-collapse: collapse;
+}
+
+.tab td {
+    border: 1px solid black;
+    height: auto;
+    vertical-align: top;
+    padding-top: 10px;
+}
+
+
+.texxt:first-letter {
+    color: blue;
+    font-size: 40px;
+    font-style: italic;
+}
+
+.lst_qwe li:nth-child(3):after {
+    content: " новинка";
+    color: blueviolet;
+    text-transform: uppercase;
+}
+
+.im {
+    outline: 3px solid brown;
+}
+
+.im:hover {
+    outline: none;
+}
+
+.im_p {
+    outline: 3px solid grey;
+}
+
+.im_p:hover {
+    outline: none;
+}
+
+
+input[type="text"]:focus {
+    background-color: skyblue;
+    font-family: Tahoma;
+    width: auto;
+    height: 1.5em;
+    color: white;
+    font-size: 1.5em;
+    border-radius: 3px;
+}
+
+input[type="email"]:focus {
+    background-color: skyblue;
+    font-family: Tahoma;
+    width: auto;
+    height: 1.5em;
+    color: white;
+    font-size: 1.5em;
+    border-radius: 3px;
+}
+
+textarea:focus {
+    background-color: skyblue;
+    height: 7em;
+    width: 23em;
+    color: white;
+    font-size: 1.5em;
+}
+
+.ttt {
+    width: 23em;
+    border-radius: 3px;
+    font-size: 15px;
+}
+
+.hhh {
+    color: black;
+    font-size: 25px;
+    font-weight: 400;
+    background-color: #eaeaea;
+
+}
+
+.blue {
+    color: blue;
+
+    background: url(/static/img/studiomon.jpg) no-repeat 20px 50px;
+}
+
+p {
+    font-size: 1.3em;
+}
+
+
+.list {
+    list-style-type: none;
+}
+
+.link {
+    font-style: italic;
+    text-decoration-color: blue;
+    text-transform: uppercase;
+    text-decoration: none;
+
+}
+
+.clearlix {
+}
+
+.details {
+
+}
+
+
+/*.meny li a:hover {*/
+/*    color: white;*/
+/*}*/
+
+/*.meny li a:active {*/
+/*    color: green;*/
+/*}*/
+.link_cat:hover{color: blue;}
+.link_cat:active{color: green;}
+.link_cat {
+    text-decoration: none;
+    color: black;
+}
+
+.details > .link_clearfix > ul > li {
+    list-style-type: none;
+    display: inline-block;
+    padding: 20px;
+    text-transform: uppercase;
+    color: black;
+
+}
+
+.link_menu {
+
+}
+
+.line_out {
+    text-decoration: none;
+}
+
+
+.list + p {
+    color: darkgreen;
+}
+
+
+p,
+h1,
+h3 {
+    text-align: center;
+}
+
+p {
+    text-align: left ! important;
+}
+
+p {
+    text-align: right
+}
+
+
+body {
+    background: #f8f8f8;
+}
+
+.meny {
+    list-style-type: none;
+    font-style: oblique;
+    font-size: 25px;
+}
+
+.sd {
+    color: #707070;
+    font-size: 14px;
+    font-style: italic;
+    line-height: 16px;
+}
+
+.li_sd {
+    text-transform: capitalize;
+    color: #484343;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+}
+
+.li_sd:first-letter {
+    /*    text-transform: capitalize;*/
+    color: red;
+    font-size: 40px;
+    font-style: italic;
+}
+
+.sd:first-letter {
+    /*    text-transform: capitalize;*/
+    color: red;
+    font-size: 40px;
+    font-style: italic;
+}
+
+.lst {
+    list-style-image: url(/static/img/for_lst/dipiano3.jpg);
+    color: darkgreen;
+    border: 2px solid green;
+}
+
+.lst2 {
+    list-style-image: url(/static/img/for_lst/gitara3.jpg);
+    color: darkgreen;
+    border: 2px solid green;
+}
+
+.lst3 {
+    list-style-image: url(/static/img/for_lst/studiomon3.jpg);
+    color: darkgreen;
+    border: 2px solid green;
+}
+
+.activM {
+    font-family: Montserrat;
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #212121;
+    border-bottom: 3px solid #212121;
+}
+
+.baza {
+    background: burlywood;
+}
+
+.json {
+    background: #8dff12;
+}

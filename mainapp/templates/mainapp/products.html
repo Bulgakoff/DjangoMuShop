@@ -21,7 +21,8 @@
                     <p class="discr_lt ltl" style="font-size: 20px">категория - {{ elem.category.name }}</p>
                     <p class="discr_lt ltl" style="font-size: 20px">{{ elem.name }}</p>
                     <p class="discr_lt" style="font-size: 20px">{{ elem.price }} руб. </p>
-                    <button class="baza" style="font-size: 20px"> купить</button>
+                    <a href="{% url 'baskets:basket_add' elem.id %}"><button class="baza" style="font-size: 20px"> Отправить в корзину</button></a>
+
                 </div>
             {% endfor %}
         </div>

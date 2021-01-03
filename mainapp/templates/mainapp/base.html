@@ -13,22 +13,9 @@
 <div class="container">
     <h1>Интернет магазин музыкальных инструментов</h1>
     <div class="logo"><img src={% static 'img/logotip/logo3.png' %} alt="#"></div>
-    <div class="header">
-
-        <ul class="meny">
-            <li><a href="{% url 'main' %}">Главная</a></li>
-            <li><a href="{% url 'mainapp:products' %}">Каталог</a></li>
-
-            {% if user.is_authenticated %}
-                <li><a href="#">{{ user.username }} <i class="fas fa-user-circle"></i></a></li>
-                <li><a href="{% url 'auth:logout' %}">Выйти <i class="fas fa-sign-out-alt"></i></a></li>
-            {% else %}
-                <li><a href="{% url 'authapp:login' %}">Войти<i class="fas fa-sign-in-alt"></i></a></li>
-            {% endif %}
-
-        </ul>
-    </div>
+    {% include 'mainapp/incl__menu/inc__menu.html' %}
 </div>
+
 <hr>
 {% block content %}
 
@@ -39,10 +26,12 @@
                                                      target="_blank">aliexpress</a></footer>
 </div>
 <!-- Bootstrap core JavaScript -->
-<script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+<script src="{% static 'vendor/jquery/jquery-3.5.1.js' %}"></script>
 <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
 
 <!-- FontAwesome script -->
 <script src="{% static 'vendor/fontawesome/fontawesome-icons.js' %}" crossorigin="anonymous"></script>
+<!-- basket.js script -->
+<script src="{% static 'js/basket.js' %}"></script>
 </body>
 </html>
