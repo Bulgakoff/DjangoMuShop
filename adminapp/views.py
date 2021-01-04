@@ -1,5 +1,6 @@
 from django.shortcuts import render, HttpResponseRedirect, reverse
 from authapp.models import User
+from mainapp.models import ProductCategory, Product
 from adminapp.forms import UserAdminRegisterForm, UserAdminProfileForm
 from django.contrib.auth.decorators import user_passes_test
 
@@ -58,3 +59,12 @@ def admin_users_delete(request, id_del=None):
     user.save()
 
     return HttpResponseRedirect(reverse('admin_staff:admin_users'))
+
+
+# =======================categories======================================
+
+def admin_categories(request):
+    context = {
+        'categories': ProductCategory.objects.all(),
+    }
+    return render(request, 'adminapp/admin-category-read.html', context)
