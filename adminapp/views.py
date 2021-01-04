@@ -1,7 +1,7 @@
 from django.shortcuts import render, HttpResponseRedirect, reverse
 from authapp.models import User
 from mainapp.models import ProductCategory, Product
-from adminapp.forms import UserAdminRegisterForm, UserAdminProfileForm
+from adminapp.forms import UserAdminRegisterForm, UserAdminProfileForm, CategoriesAdminCreateForm
 from django.contrib.auth.decorators import user_passes_test
 
 
@@ -68,3 +68,18 @@ def admin_categories(request):
         'categories': ProductCategory.objects.all(),
     }
     return render(request, 'adminapp/admin-category-read.html', context)
+
+
+def admin_categories_create(request):
+    if request.method == 'POST':
+        form = CategoriesAdminCreateForm(data=request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect(reverse('admin_staff:admin_categories'))
+        else:
+            return HttpResponseRedirect(reverse('admin_staff:admin_categories'))
+    form = CategoriesAdminCreateForm()
+    context = {
+        'form': form,
+    }
+    return render(request, 'adminapp/admin-category-create.html', context)

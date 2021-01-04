@@ -26,12 +26,23 @@ class UserAdminProfileForm(UserProfileForm):
 
 # ============================categories=================================================
 
-class CategoriesAdminReadForm(forms.ModelForm):
+class CategoriesAdminCreateForm(forms.ModelForm):
     class Meta:
         model = ProductCategory
         fields = ('name', 'description',)
 
     def __init__(self, *args, **kwargs):
-        super(CategoriesAdminReadForm, self).__init__(*args, **kwargs)
+        super(CategoriesAdminCreateForm, self).__init__(*args, **kwargs)
         self.fields['name'].widget.attrs['class'] = 'form-control py-4'
         self.fields['description'].widget.attrs['class'] = 'form-control py-4'
+
+
+# class CategoriesAdminCreateForm(forms.ModelForm):
+#     class Meta:
+#         model = ProductCategory
+#         fields = ('name', 'description')
+#
+#     def __init__(self, *args, **kwargs):
+#         super(CategoriesAdminCreateForm, self).__init__(*args, **kwargs)
+#         for field_name, field in self.fields.items():
+#             field.widget.attrs['class'] = 'form-control py-4'
