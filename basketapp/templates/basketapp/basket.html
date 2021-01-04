@@ -52,7 +52,7 @@
                 {#            {{ baskets.0.total_quantity }} продуктов#}
                 {#        </span>#}
             </h4>
-            <div style="background-color: darkseagreen">
+            <div style="background-color: darkseagreen" >
                 {% for basket in baskets %}
                     <h5 class="card-title">{{ basket.product.name }}</h5>
                     <p class="card-text">{{ basket.product.short_description }}</p>
