@@ -46,3 +46,6 @@ class CategoriesAdminCreateForm(forms.ModelForm):
 #         super(CategoriesAdminCreateForm, self).__init__(*args, **kwargs)
 #         for field_name, field in self.fields.items():
 #             field.widget.attrs['class'] = 'form-control py-4'
+class CategoriesAdminUpdateForm(CategoriesAdminCreateForm):
+    def __init__(self, *args, **kwargs):
+        super(CategoriesAdminCreateForm, self).__init__(*args, **kwargs)

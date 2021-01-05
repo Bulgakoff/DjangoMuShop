@@ -13,7 +13,7 @@ urlpatterns = [
 
     path('categories/', adminapp.admin_categories, name='admin_categories'),
     path('categories/create/', adminapp.admin_categories_create, name='admin_categories_create'),
-    # path('users/update/<int:user_id>/', adminapp.admin_users_update, name='admin_users_update'),
+    path('categories/update/<int:categ_id>/', adminapp.admin_categories_update, name='admin_categories_update'),
     # path('users/delete/<int:id_del>/', adminapp.admin_users_delete, name='admin_users_delete'),
 
 ]
