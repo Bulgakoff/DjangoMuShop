@@ -56,3 +56,9 @@ class ProductsAdminCreateForm(forms.ModelForm):
     class Meta:
         model = Product
         fields = ('name', 'description', 'image', 'short_description', 'price', 'quantity', 'category',)
+
+    def __init__(self, *args, **kwargs):
+        super(ProductsAdminCreateForm, self).__init__(*args, **kwargs)
+        for field_name, field in self.fields.items():
+            field.widget.attrs['class'] = 'form-control py-4'
+        self.fields['image'].widget.attrs['class'] = 'custom-file-input'

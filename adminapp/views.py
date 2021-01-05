@@ -136,3 +136,7 @@ def admin_products_create(request):
         'form': form,
     }
     return render(request, 'adminapp/admin-products-create.html', context)
+
+
+# def admin_products_update(request):
+#     return
