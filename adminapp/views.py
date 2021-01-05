@@ -153,3 +153,11 @@ def admin_products_update(request, prod_id):
         'product': product,
     }
     return render(request, 'adminapp/admin-products-update-delete.html', context)
+
+
+def admin_products_delete(request, prod_id_del):
+    product = Product.objects.get(id=prod_id_del)
+    product.is_active = False
+    product.save()
+
+    return HttpResponseRedirect(reverse('admin_staff:admin_products'))
