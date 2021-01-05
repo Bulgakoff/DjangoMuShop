@@ -1,7 +1,8 @@
 from django.shortcuts import render, HttpResponseRedirect, reverse
 from authapp.models import User
 from mainapp.models import ProductCategory, Product
-from adminapp.forms import UserAdminRegisterForm, UserAdminProfileForm, CategoriesAdminCreateForm, CategoriesAdminUpdateForm
+from adminapp.forms import UserAdminRegisterForm, UserAdminProfileForm, CategoriesAdminCreateForm, \
+    CategoriesAdminUpdateForm
 from django.contrib.auth.decorators import user_passes_test
 
 
@@ -101,3 +102,13 @@ def admin_categories_update(request, categ_id):
     }
 
     return render(request, 'adminapp/admin-category-update-delete.html', context)
+
+
+def admin_categories_delete(request, categ_id_del):
+    print(f'--------------------------------------------------{categ_id_del}')
+    category = ProductCategory.objects.get(id=categ_id_del)
+    print(f'-------------------------------------------------->{category.is_active}')
+    category.is_active = False
+    category.save()
+
+    return HttpResponseRedirect(reverse('admin_staff:admin_categories'))
