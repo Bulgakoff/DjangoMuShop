@@ -53,6 +53,8 @@ class CategoriesAdminUpdateForm(CategoriesAdminCreateForm):
 
 # ============================Products=================================================
 class ProductsAdminCreateForm(forms.ModelForm):
+    image = forms.ImageField(widget=forms.FileInput())
+
     class Meta:
         model = Product
         fields = ('name', 'description', 'image', 'short_description', 'price', 'quantity', 'category',)
@@ -62,3 +64,8 @@ class ProductsAdminCreateForm(forms.ModelForm):
         for field_name, field in self.fields.items():
             field.widget.attrs['class'] = 'form-control py-4'
         self.fields['image'].widget.attrs['class'] = 'custom-file-input'
+
+
+class ProductsAdminUpdateForm(ProductsAdminCreateForm):
+    def __init__(self, *args, **kwargs):
+        super(ProductsAdminUpdateForm, self).__init__(*args, **kwargs)

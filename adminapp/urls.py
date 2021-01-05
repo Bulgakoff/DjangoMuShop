@@ -18,6 +18,6 @@ urlpatterns = [
 
     path('products/', adminapp.admin_products, name='admin_products'),
     path('products/create/', adminapp.admin_products_create, name='admin_products_create'),
-    # path('products/update/<int:prod_id>/', adminapp.admin_products_update, name='admin_products_update'),
+    path('products/update/<int:prod_id>/', adminapp.admin_products_update, name='admin_products_update'),
     # path('categories/delete/<int:categ_id_del>/', adminapp.admin_categories_delete, name='admin_categories_delete'),
 ]

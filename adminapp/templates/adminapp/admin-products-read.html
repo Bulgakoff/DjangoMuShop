@@ -36,9 +36,8 @@
                     {% for product in products %}
                         <tr>
                             <td>
-                                {#<a href="{% url 'admin_staff:admin_users_update' user.id %}" style="color: dodgerblue">#}
-{#                                <a href="{% url 'adminapp:admin_products_update' product.id %}"#}
-                                <a href="#"
+                                <a href="{% url 'adminapp:admin_products_update' product.id %}"
+{#                                <a href="#"#}
                                    style="color: dodgerblue">
                                     {{ product.name }}
                                 </a>
