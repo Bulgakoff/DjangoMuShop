@@ -2,7 +2,7 @@ from django.shortcuts import render, HttpResponseRedirect, reverse
 from authapp.models import User
 from mainapp.models import ProductCategory, Product
 from adminapp.forms import UserAdminRegisterForm, UserAdminProfileForm, CategoriesAdminCreateForm, \
-    CategoriesAdminUpdateForm
+    CategoriesAdminUpdateForm, ProductsAdminCreateForm
 from django.contrib.auth.decorators import user_passes_test
 
 
@@ -112,3 +112,27 @@ def admin_categories_delete(request, categ_id_del):
     category.save()
 
     return HttpResponseRedirect(reverse('admin_staff:admin_categories'))
+
+
+# ===================products==============================
+
+def admin_products(request):
+    context = {
+        'products': Product.objects.all(),
+    }
+    return render(request, 'adminapp/admin-products-read.html', context)
+
+
+def admin_products_create(request):
+    if request.method == 'POST':
+        form = ProductsAdminCreateForm(data=request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect(reverse('admin_staff:admin_products'))
+        else:
+            return HttpResponseRedirect(reverse('admin_staff:admin_products'))
+    form = ProductsAdminCreateForm()
+    context = {
+        'form': form,
+    }
+    return render(request, 'adminapp/admin-products-create.html', context)

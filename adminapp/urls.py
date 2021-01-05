@@ -16,4 +16,8 @@ urlpatterns = [
     path('categories/update/<int:categ_id>/', adminapp.admin_categories_update, name='admin_categories_update'),
     path('categories/delete/<int:categ_id_del>/', adminapp.admin_categories_delete, name='admin_categories_delete'),
 
+    path('products/', adminapp.admin_products, name='admin_products'),
+    path('products/create/', adminapp.admin_products_create, name='admin_products_create'),
+    # path('categories/update/<int:categ_id>/', adminapp.admin_categories_update, name='admin_categories_update'),
+    # path('categories/delete/<int:categ_id_del>/', adminapp.admin_categories_delete, name='admin_categories_delete'),
 ]

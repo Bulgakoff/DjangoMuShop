@@ -1,7 +1,7 @@
 from django import forms
 from authapp.forms import UserRegisterForm, UserProfileForm
 from authapp.models import User
-from mainapp.models import ProductCategory
+from mainapp.models import ProductCategory, Product
 
 
 class UserAdminRegisterForm(UserRegisterForm):
@@ -49,3 +49,10 @@ class CategoriesAdminCreateForm(forms.ModelForm):
 class CategoriesAdminUpdateForm(CategoriesAdminCreateForm):
     def __init__(self, *args, **kwargs):
         super(CategoriesAdminCreateForm, self).__init__(*args, **kwargs)
+
+
+# ============================Products=================================================
+class ProductsAdminCreateForm(forms.ModelForm):
+    class Meta:
+        model = Product
+        fields = ('name', 'description', 'image', 'short_description', 'price', 'quantity', 'category',)
