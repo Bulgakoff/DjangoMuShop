@@ -1,0 +1,119 @@
+[
+  {
+    "model": "mainapp.product",
+    "pk": 1,
+    "fields": {
+      "name": "\u041d\u0430\u0443\u0448\u043d\u0438\u043a\u0438",
+      "image": "products_images/ears1.jpg",
+      "description": "\u041a\u0440\u0430\u0441\u043d\u044b\u0435 \u043f\u0440\u043e\u0432\u043e\u0434\u043d\u044b\u0435",
+      "short_description": "",
+      "price": "500.00",
+      "quantity": 5,
+      "category": 2
+    }
+  },
+  {
+    "model": "mainapp.product",
+    "pk": 2,
+    "fields": {
+      "name": "\u0413\u0438\u0442\u0430\u0440\u0430 \u044d\u043b\u0435\u043a\u0442\u0440\u043e\u043d\u043d\u0430\u044f",
+      "image": "products_images/gitara.jpg",
+      "description": "\u0413\u0438\u0442\u0430\u0440\u0430 \u0447\u0435\u0440\u043d\u0430\u044f \u044d\u043b\u0435\u043a\u0442\u0440\u043e",
+      "short_description": "\u0434\u043b\u044f \u043e\u0431\u0443\u0447\u0435\u043d\u0438\u044f",
+      "price": "8000.00",
+      "quantity": 6,
+      "category": 3
+    }
+  },
+  {
+    "model": "mainapp.product",
+    "pk": 3,
+    "fields": {
+      "name": "\u0423\u0441\u0438\u043b\u0438\u0442\u0435\u043b\u044c Lux",
+      "image": "products_images/studiomon.jpg",
+      "description": "\u0413\u043b\u0430\u0434\u043a\u0438\u0439 \u043a\u043e\u0436\u0430\u043d\u044b\u0439 \u0432\u0435\u0440\u0445. \u041d\u0430\u0442\u0443\u0440\u0430\u043b\u044c\u043d\u044b\u0439 \u043c\u0430\u0442\u0435\u0440\u0438\u0430\u043b.",
+      "short_description": "\u0431\u043e\u043b\u044c\u0448\u043e\u0439",
+      "price": "2000.00",
+      "quantity": 6,
+      "category": 5
+    }
+  },
+  {
+    "model": "mainapp.product",
+    "pk": 4,
+    "fields": {
+      "name": "\u0423\u0441\u0438\u043b\u0438\u0442\u0435\u043b\u044c \u043c\u0443\u0437",
+      "image": "",
+      "description": "\u0413\u043b\u0430\u0434\u043a\u0430\u044f \u0442\u043a\u0430\u043d\u044c. \u0412\u043e\u0434\u043e\u043d\u0435\u043f\u0440\u043e\u043d\u0438\u0446\u0430\u0435\u043c\u043e\u0435 \u043f\u043e\u043a\u0440\u044b\u0442\u0438\u0435.",
+      "short_description": "\u0413\u043b\u0430\u0434\u043a\u0438\u0439",
+      "price": "4222.00",
+      "quantity": 12,
+      "category": 5
+    }
+  },
+  {
+    "model": "mainapp.product",
+    "pk": 5,
+    "fields": {
+      "name": "\u041f\u0438\u0430\u043d\u0438\u043d\u043e \u044d\u043b\u0435\u043a\u0440\u043e\u043d\u043d\u043e\u0435",
+      "image": "products_images/dipiano.jpg",
+      "description": "\u041d\u0430\u0442\u0443\u0440\u0430\u043b\u044c\u043d\u044b\u0439 \u043c\u0430\u0442\u0435\u0440\u0438\u0430\u043b.",
+      "short_description": "\u041f\u043b\u0430\u0441\u0442\u0438\u043a-\u0434\u0435\u0440\u0435\u0432\u043e",
+      "price": "28000.00",
+      "quantity": 11,
+      "category": 4
+    }
+  },
+  {
+    "model": "mainapp.product",
+    "pk": 6,
+    "fields": {
+      "name": "\u0413\u0438\u0442\u0430\u0440\u0430 \u043a\u043b\u0430\u0441\u0441\u0438\u0447\u0435\u0441\u043a\u0430\u044f",
+      "image": "products_images/gitklass.jpg",
+      "description": "\u0413\u0438\u0442\u0430\u0440\u0430 \u0431\u0435\u0437 \u0434\u0435\u0444\u0435\u043a\u0442\u043e\u0432. \u041f\u0440\u043e\u0448\u043b\u0430 \u0442\u0449\u0430\u0442\u0435\u043b\u044c\u043d\u0443\u044e \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0443 \u043d\u0430 \u0431\u0440\u0430\u043a.",
+      "short_description": "\u0434\u0435\u0440\u0435\u0432\u043e",
+      "price": "80000.00",
+      "quantity": 3,
+      "category": 3
+    }
+  },
+  {
+    "model": "mainapp.product",
+    "pk": 7,
+    "fields": {
+      "name": "\u041c\u0435\u0442\u0440\u043e\u043d\u043e\u043c \u043c\u0435\u0445\u0430\u043d\u0438\u0447\u0435\u0441\u043a\u0438\u0439.",
+      "image": "products_images/metron.jpg",
+      "description": "\u0414\u0438\u0430\u043f\u0430\u0437\u043e\u043d \u0442\u0435\u043c\u043f\u0430 40 - 208 \u0443\u0434\u0430\u0440\u043e\u0432 \u0432 \u043c\u0438\u043d\u0443\u0442\u0443",
+      "short_description": "\u041c\u0435\u0442\u0440\u043e\u043d\u043e\u043c \u043c\u0435\u0445\u0430\u043d\u0438\u0447\u0435\u0441\u043a\u0438\u0439.",
+      "price": "799.00",
+      "quantity": 5,
+      "category": 6
+    }
+  },
+  {
+    "model": "mainapp.product",
+    "pk": 8,
+    "fields": {
+      "name": "\u041f\u0438\u0430\u043d\u0438\u043d\u043e \u043a\u043b\u0430\u0441\u0441\u0438\u0447\u0435\u0441\u043a\u043e\u0435",
+      "image": "products_images/class_red_piano.jpg",
+      "description": "\u043a\u0440\u0430\u0441\u043d\u043e\u0435",
+      "short_description": "\u0413\u043b\u0430\u0434\u043a\u0438\u0439 \u043a\u043e\u0436\u0430\u043d\u044b\u0439 \u0432\u0435\u0440\u0445.",
+      "price": "90000.00",
+      "quantity": 4,
+      "category": 4
+    }
+  },
+  {
+    "model": "mainapp.product",
+    "pk": 9,
+    "fields": {
+      "name": "\u041b\u0438\u0440\u0430",
+      "image": "products_images/lira1.jpg",
+      "description": "\u043e\u0440\u043a\u0435\u0441\u0442\u0440\u043e\u0432\u0430\u044f Josef Klier E12",
+      "short_description": "\u0418\u0437\u044f\u0449\u043d\u0430\u044f",
+      "price": "5000.00",
+      "quantity": 5,
+      "category": 1
+    }
+  }
+]
