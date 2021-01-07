@@ -6,10 +6,10 @@
 {% endblock %}
 
 {% block content %}
- {% for category in categories %}
-    <div style="font-size: 24px"><a href="#">{{ category }}</a></div>
+    {% for category in categories %}
+        <div style="font-size: 24px"><a href="{% url 'mainapp:product' category.id %}">{{ category }}</a></div>
 
- {% endfor %}
+    {% endfor %}
 
 
     <div class="cat_prod">
@@ -21,12 +21,36 @@
                     <p class="discr_lt ltl" style="font-size: 20px">категория - {{ elem.category.name }}</p>
                     <p class="discr_lt ltl" style="font-size: 20px">{{ elem.name }}</p>
                     <p class="discr_lt" style="font-size: 20px">{{ elem.price }} руб. </p>
-                    <a href="{% url 'baskets:basket_add' elem.id %}"><button class="baza" style="font-size: 20px"> Отправить в корзину</button></a>
+                    <a href="{% url 'baskets:basket_add' elem.id %}">
+                        <button class="baza" style="font-size: 20px"> Отправить в корзину</button>
+                    </a>
 
                 </div>
             {% endfor %}
+
         </div>
+
     </div>
+    <nav aria-label="..." class="d-block mx-auto" style="display: inline-block">
+            <ul class="pagination">
+                <li class="page-item {% if not products.has_previous %} disabled {% endif %}">
+                    <a class="page-link"
+                       href="{% if not products.has_previous %} # {% else %} {% url 'products:page' products.previous_page_number %}{% endif %}">Previous</a>
+                </li>
+                {% for page in products.paginator.page_range %}
+                    <li class="page-item">
+                        <a class="page-link" href="{% url 'products:page' page %}">
+                            {{ page }}
+                        </a>
+                    </li>
+                {% endfor %}
+                <li class="page-item {% if not products.has_next %} disabled {% endif %}">
+                    <a class="page-link"
+                       href="{% if not products.has_next %} # {% else %} {% url 'products:page' products.next_page_number %}{% endif %}">Next</a>
+                </li>
+            </ul>
+        </nav>
 
     <div class="inv"></div>
+
 {% endblock %}
