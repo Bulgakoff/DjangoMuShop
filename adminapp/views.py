@@ -93,7 +93,6 @@ class UserDeleteView(DeleteView):
         return HttpResponseRedirect(self.get_success_url())
 
 
-
 # @user_passes_test(lambda u: u.is_superuser)
 # def admin_users_delete(request, id_del=None):
 #     user = User.objects.get(id=id_del)
@@ -104,55 +103,91 @@ class UserDeleteView(DeleteView):
 
 
 # =======================categories======================================
-
-def admin_categories(request):
-    context = {
-        'categories': ProductCategory.objects.all(),
-    }
-    return render(request, 'adminapp/admin-category-read.html', context)
+class CategoriesListView(ListView):
+    model = ProductCategory
+    template_name = 'adminapp/admin-category-read.html'
 
 
-def admin_categories_create(request):
-    if request.method == 'POST':
-        form = CategoriesAdminCreateForm(data=request.POST)
-        if form.is_valid():
-            form.save()
-            return HttpResponseRedirect(reverse('admin_staff:admin_categories'))
-        else:
-            return HttpResponseRedirect(reverse('admin_staff:admin_categories'))
-    form = CategoriesAdminCreateForm()
-    context = {
-        'form': form,
-    }
-    return render(request, 'adminapp/admin-category-create.html', context)
+# def admin_categories(request):
+#     context = {
+#         'categories': ProductCategory.objects.all(),
+#     }
+#     return render(request, 'adminapp/admin-category-read.html', context)
+
+class CategoriesCreateView(CreateView):
+    model = ProductCategory
+    template_name = 'adminapp/admin-category-create.html'
+    form_class = CategoriesAdminCreateForm
+    success_url = reverse_lazy('admin_staff:admin_categories')
+
+    def get_context_data(self, **kwargs):
+        context = super(CategoriesCreateView, self).get_context_data(**kwargs)
+        context.update({'title': 'CHange category'})
+        return context
 
 
-def admin_categories_update(request, categ_id):
-    category = ProductCategory.objects.get(id=categ_id)
-    if request.method == 'POST':
-        form = CategoriesAdminUpdateForm(request.POST, instance=category)
-        if form.is_valid():
-            form.save()
-            return HttpResponseRedirect(reverse('admin_staff:admin_categories'))
-        else:
-            return HttpResponseRedirect(reverse('admin_staff:admin_categories'))
-    form = CategoriesAdminUpdateForm(instance=category)
-    context = {
-        'form': form,
-        'category': category,
-    }
+# def admin_categories_create(request):
+#     if request.method == 'POST':
+#         form = CategoriesAdminCreateForm(data=request.POST)
+#         if form.is_valid():
+#             form.save()
+#             return HttpResponseRedirect(reverse('admin_staff:admin_categories'))
+#         else:
+#             return HttpResponseRedirect(reverse('admin_staff:admin_categories'))
+#     form = CategoriesAdminCreateForm()
+#     context = {
+#         'form': form,
+#     }
+#     return render(request, 'adminapp/admin-category-create.html', context)
+class CategoriesUpdateView(UpdateView):
+    model = ProductCategory
+    template_name = 'adminapp/admin-category-update-delete.html'
+    form_class = CategoriesAdminUpdateForm
+    success_url = reverse_lazy('admin_staff:admin_categories')
 
-    return render(request, 'adminapp/admin-category-update-delete.html', context)
+    def get_context_data(self, **kwargs):
+        context = super(CategoriesUpdateView, self).get_context_data(**kwargs)
+        context.update({'title': 'Редактирование категории'})
+        return context
 
 
-def admin_categories_delete(request, categ_id_del):
-    print(f'--------------------------------------------------{categ_id_del}')
-    category = ProductCategory.objects.get(id=categ_id_del)
-    print(f'-------------------------------------------------->{category.is_active}')
-    category.is_active = False
-    category.save()
+# def admin_categories_update(request, categ_id):
+#     category = ProductCategory.objects.get(id=categ_id)
+#     if request.method == 'POST':
+#         form = CategoriesAdminUpdateForm(request.POST, instance=category)
+#         if form.is_valid():
+#             form.save()
+#             return HttpResponseRedirect(reverse('admin_staff:admin_categories'))
+#         else:
+#             return HttpResponseRedirect(reverse('admin_staff:admin_categories'))
+#     form = CategoriesAdminUpdateForm(instance=category)
+#     context = {
+#         'form': form,
+#         'category': category,
+#     }
+#
+#     return render(request, 'adminapp/admin-category-update-delete.html', context)
 
-    return HttpResponseRedirect(reverse('admin_staff:admin_categories'))
+class CategoriesDeleteView(DeleteView):
+    model = ProductCategory
+    template_name = 'adminapp/admin-category-update-delete.html'
+    success_url = reverse_lazy('admin_staff:admin_categories')
+
+    def delete(self, request, *args, **kwargs):
+        self.object = self.get_object()
+        self.object.is_active = False
+        self.object.save()
+
+        return HttpResponseRedirect(self.get_success_url())
+
+# def admin_categories_delete(request, categ_id_del):
+#     print(f'--------------------------------------------------{categ_id_del}')
+#     category = ProductCategory.objects.get(id=categ_id_del)
+#     print(f'-------------------------------------------------->{category.is_active}')
+#     category.is_active = False
+#     category.save()
+#
+#     return HttpResponseRedirect(reverse('admin_staff:admin_categories'))
 
 
 # ===================products==============================
