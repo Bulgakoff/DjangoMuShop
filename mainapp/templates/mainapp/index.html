@@ -1,30 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'mainapp/base.html' %}
+{% load static %}
+{% block css %}
+    <link rel="stylesheet" href={% static 'css/style.css' %}>
+{% endblock %}
 
-<head>
-    <meta charset="UTF-8">
-    <title>Главная страница МУЗЫКАЛЬНЫЙ МАГАЗИН </title>
-    <link rel="stylesheet" href="/static/css/style.css">
-</head>
-
-<body>
-    <h1>Интернет магазин музыкальных инструментов</h1>
-    <div class="container">
-        <div class="logo"> <img src="/static/img/logotip/logo3.png" alt=""></div>
-        <div class="header">
-
-            <ul class="meny">
-{#                <li><a href="cont.html">Контакты</a></li>#}
-                <li><a href="catalog/catalog.html">Каталог</a></li>
-                <li><a href="#">Войти</a></li>
-            </ul>
-        </div>
-    </div>
-    <br>
-    <br>
-    <br>
-    <br>
-    <hr>
+{% block content %}
     <div class="text_main">
         <h3>Информация о&nbsp;магазине</h3>
         <p>
@@ -49,27 +29,9 @@
             телефонам к&nbsp;менеджерам. Наши сотрудники всегда внимательны и&nbsp;вежливы, они предоставят
             профессиональную консультацию и&nbsp;помогут сориентироваться при выборе.</p>
     </div>
-    <!--    <p class="texxt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi distinctio molestias reiciendis assumenda eum autem, non aliquid nobis earum inventore ratione ducimus praesentium neque, aperiam ea ullam unde quia voluptates vel perferendis ipsam doloribus id! Animi, autem! Optio tenetur perferendis esse reprehenderit, harum quam ipsam nisi, hic obcaecati dicta aperiam.</p>-->
-    <!--
-    <ul class="lst_qwe">
-        <li>list_qwe_1</li>
-        <li>list_qwe_2</li>
-        <li>list_qwe_3</li>
-        <li>list_qwe_4</li>
-        <li>list_qwe_5</li>
-    </ul>
-   
-    <div class="content">content</div>
-    <div class="footer">footer</div>
--->
-    <!--    <span>text</span><span>text</span>-->
+    <button style="background-color: powderblue"><a href="{% url 'mainapp:products' %}">Начать покупки</a></button>
     <hr>
-    <div class="footer">
-        <footer> Все права защищены &#169; &nbsp;2020 <a class="link" href="https://aliexpress.ru"
-                target="_blank">aliexpress</a> </footer>
-    </div>
-    <br>
-    <br>
-</body>
+{% endblock %}
 
-</html>
+
+

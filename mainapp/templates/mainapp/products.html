@@ -1,40 +1,56 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'mainapp/base.html' %}
+{% load static %}
 
-<head>
-    <meta charset="UTF-8">
-    <title>Каталог товаров </title>
-    <link rel="stylesheet" href="/static/css/style.css">
-</head>
+{% block css %}
+    <link rel="stylesheet" href={% static 'css/style.css' %}>
+{% endblock %}
 
-<body>
-    <h1 class="hhh">Каталог</h1>
-    <div class="container">
-        <div class="logo"> <img src="/static/img/logotip/logo3.png"></div>
-        <div class="header">
-            <ul class="meny">
-                <li> <a href="../index.html">Главная</a></li>
-                <li><a href="../cont.html">Контакты</a></li>
-<!--                <li><a href="catalog.html">Каталог</a></li>-->
-            </ul>
+{% block content %}
+    {% for category in categories %}
+        <div style="font-size: 24px"><a href="{% url 'mainapp:product' category.id %}">{{ category }}</a></div>
+
+    {% endfor %}
+
+
+    <div class="cat_prod">
+        <div class="insnt_diff">
+            {% for elem in products %}
+                <div class="prod_discr">
+                    <div><img src="/media/{{ elem.image }}" width="250" alt="#"></div>
+                    <p class="discr_lt" style="font-size: 20px">Описание: {{ elem.description }} </p>
+                    <p class="discr_lt ltl" style="font-size: 20px">категория - {{ elem.category.name }}</p>
+                    <p class="discr_lt ltl" style="font-size: 20px">{{ elem.name }}</p>
+                    <p class="discr_lt" style="font-size: 20px">{{ elem.price }} руб. </p>
+                    <a href="{% url 'baskets:basket_add' elem.id %}">
+                        <button class="baza" style="font-size: 20px"> Отправить в корзину</button>
+                    </a>
+
+                </div>
+            {% endfor %}
+
         </div>
-    </div>
 
-
-    <div class="gitar">
-        <hr>
-        <div class="prod_cat1">
-            <a href="piano.html" target="_blank"><img src="/static/img/for_catalog/dipiano2.jpg"></a> <br>Пианио цифровое </div>
-        <div class="prod_cat2">
-            <a href="gitara.html" target="_blank"> <img src="/static/img/for_catalog/gitara2.jpg"></a><br> Гитара </div>
-        <div class="prod_cat3">
-            <a href="tumba.html" target="_blank"><img src="/static/img/for_catalog/studiomon2.jpg" width="120"></a> <br>Тумба </div>
     </div>
+    <nav aria-label="..." class="d-block mx-auto" style="display: inline-block">
+            <ul class="pagination">
+                <li class="page-item {% if not products.has_previous %} disabled {% endif %}">
+                    <a class="page-link"
+                       href="{% if not products.has_previous %} # {% else %} {% url 'products:page' products.previous_page_number %}{% endif %}">Previous</a>
+                </li>
+                {% for page in products.paginator.page_range %}
+                    <li class="page-item">
+                        <a class="page-link" href="{% url 'products:page' page %}">
+                            {{ page }}
+                        </a>
+                    </li>
+                {% endfor %}
+                <li class="page-item {% if not products.has_next %} disabled {% endif %}">
+                    <a class="page-link"
+                       href="{% if not products.has_next %} # {% else %} {% url 'products:page' products.next_page_number %}{% endif %}">Next</a>
+                </li>
+            </ul>
+        </nav>
+
     <div class="inv"></div>
 
-    <div class="footer">
-        <footer> Все права защищены &#169; &nbsp;2020 <a class="link" href="https://aliexpress.ru" target="_blank">aliexpress</a> </footer>
-    </div>
-</body>
-
-</html>
+{% endblock %}

@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}/ МУЗЫКАЛЬНЫЙ МАГАЗИН </title>
+
+    {% block css %}
+
+    {% endblock %}
+</head>
+<body>
+<div class="container">
+    <h1>Интернет магазин музыкальных инструментов</h1>
+    <div class="logo"><img src={% static 'img/logotip/logo3.png' %} alt="#"></div>
+    {% include 'mainapp/incl__menu/inc__menu.html' %}
+</div>
+
+<hr>
+{% block content %}
+
+{% endblock %}
+<!-- Footer -->
+<div class="footer">
+    <footer> Все права защищены &#169; &nbsp;2020 <a class="link" href="https://aliexpress.ru"
+                                                     target="_blank">aliexpress</a></footer>
+</div>
+<!-- Bootstrap core JavaScript -->
+<script src="{% static 'vendor/jquery/jquery-3.5.1.js' %}"></script>
+<script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+<!-- FontAwesome script -->
+<script src="{% static 'vendor/fontawesome/fontawesome-icons.js' %}" crossorigin="anonymous"></script>
+<!-- basket.js script -->
+<script src="{% static 'js/basket.js' %}"></script>
+</body>
+</html>
